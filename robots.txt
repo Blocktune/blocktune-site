@@ -1,1 +1,4 @@
-<!-- robots.txt (placeholder) -->
+User-agent: *
+Allow: /
+
+Sitemap: https://blocktune-site.onrender.com/sitemap.xml
