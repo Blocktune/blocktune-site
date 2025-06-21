@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact – BlockTune</title>
+  <meta name="description" content="Contacte le studio BlockTune pour une demande de mix ou mastering">
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="logo_blocktune.png" alt="BlockTune Logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="tarifs.html">Tarifs</a></li>
+        <li><a href="commande.html">Commande</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contact">
+    <h1>Contact</h1>
+    <p>Une question, une précision ? Tu peux me contacter ici, ou m’envoyer tes pistes directement par e-mail.</p>
+
+    <form action="https://formsubmit.co/blocktune@tutamail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="box">
+      <label>Nom / Pseudo</label>
+      <input type="text" name="nom" required>
+
+      <label>Adresse email</label>
+      <input type="email" name="email" required>
+
+      <label>Message</label>
+      <textarea name="message" required></textarea>
+
+      <button type="submit">Envoyer</button>
+    </form>
+
+    <p>📨 Tu peux aussi envoyer directement tes fichiers audio à : <strong>blocktune@tutamail.com</strong></p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 BlockTune. Tous droits réservés.</p>
+  </footer>
+</body>
+</html>

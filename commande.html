@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commande – BlockTune</title>
+  <meta name="description" content="Commander un mix ou mastering pro en crypto">
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <img src="logo_blocktune.png" alt="BlockTune Logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="tarifs.html">Tarifs</a></li>
+        <li><a href="commande.html" class="active">Commande</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="commande">
+    <h1>Passer commande</h1>
+
+    <form action="https://formsubmit.co/blocktune@tutamail.com" method="POST">
+      <input type="hidden" name="_redirect" value="https://blocktune-site.onrender.com/merci.html">
+      <input type="hidden" name="_captcha" value="false">
+
+      <label>Nom / Pseudo</label>
+      <input type="text" name="nom" required>
+
+      <label>Email</label>
+      <input type="email" name="email" required>
+
+      <label>Matériel utilisé</label>
+      <input type="text" name="materiel">
+
+      <label>Choix du forfait</label>
+      <select name="forfait" required>
+        <option value="Mix/Mastering">🎧 Mix/Mastering (1 son)</option>
+        <option value="Mix+Mastering Premium">🔥 Mix + Mastering Premium (2 sons)</option>
+        <option value="Topline">🎤 Topline uniquement</option>
+        <option value="Livraison express">⚡ Livraison express</option>
+      </select>
+
+      <label>Style musical</label>
+      <select name="style">
+        <option>Trap</option>
+        <option>RnB</option>
+        <option>Drill</option>
+        <option>Rage / Plug</option>
+        <option>Afro</option>
+        <option>2-Step / Chill</option>
+        <option>Pop</option>
+        <option>Hip-Hop</option>
+        <option>New Wave</option>
+        <option>Reggaeton</option>
+        <option>Dancehall</option>
+        <option>Autre</option>
+      </select>
+
+      <label>Message complémentaire</label>
+      <textarea name="message"></textarea>
+
+      <button type="submit">Envoyer la commande</button>
+    </form>
+
+    <section class="crypto-infos">
+      <h2>Paiement</h2>
+      <p>⚠️ <strong>Commande validée uniquement après paiement reçu</strong></p>
+      <p>🚫 Aucun remboursement possible</p>
+
+      <div class="wallet">
+        <h3>Bitcoin (BTC)</h3>
+        <p id="btc">bc1qqvctuamud0wn649snnefjnzugs0nqc38ghkfrd</p>
+        <img src="qrcode_btc.png" alt="QR BTC" class="qrcode">
+        <button onclick="copy('btc')">Copier l’adresse</button>
+      </div>
+
+      <div class="wallet">
+        <h3>Ethereum / USDT (ERC20)</h3>
+        <p id="eth">0x0E4C47af698D83cfa287225D0A0Ba6dADA45f5fC</p>
+        <img src="qrcode_eth.png" alt="QR ETH" class="qrcode">
+        <button onclick="copy('eth')">Copier l’adresse</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 BlockTune. Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    function copy(id) {
+      const text = document.getElementById(id).textContent;
+      navigator.clipboard.writeText(text);
+      alert("Adresse copiée !");
+    }
+  </script>
+</body>
+</html>
