@@ -7,93 +7,40 @@
   <title>À propos – BlockTune</title>
   <link rel="icon" href="favicon.ico" />
   <link rel="stylesheet" href="style.css" />
-  <style>
-    .about-image {
-      width: 80%;
-      max-width: 300px;
-      border-radius: 16px;
-      display: block;
-      margin: 20px auto;
-      box-shadow: 0 0 10px rgba(0,0,0,0.4);
-    }
-
-    @media (max-width: 768px) {
-      .burger {
-        position: absolute;
-        right: 20px;
-        top: 28px;
-        cursor: pointer;
-        z-index: 999;
-      }
-    }
-
-    .burger div {
-      width: 25px;
-      height: 3px;
-      background-color: white;
-      margin: 5px 0;
-      transition: 0.4s;
-    }
-
-    .close-menu {
-      display: none;
-    }
-
-    .nav-links.active {
-      display: flex;
-      flex-direction: column;
-      position: fixed;
-      top: 60px;
-      right: 0;
-      background-color: #111;
-      width: 100%;
-      height: 100%;
-      padding: 20px;
-      z-index: 998;
-    }
-
-    .burger.hide {
-      display: none;
-    }
-
-    .close-menu.show {
-      display: block;
-      position: fixed;
-      top: 20px;
-      right: 25px;
-      font-size: 30px;
-      color: white;
-      z-index: 999;
-      cursor: pointer;
-    }
-  </style>
+  <script src="script.js" defer></script>
 </head>
 <body>
+
+  <!-- Barre de navigation (identique à index.html) -->
   <header class="navbar">
     <a href="index.html">
-      <img src="logo_blocktune.png" alt="BlockTune Logo" class="logo"/>
+      <img src="logo_blocktune.png" alt="Logo BlockTune" class="logo">
     </a>
+
     <nav class="nav-container">
-      <ul class="nav-links">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="a-propos.html" class="active">À propos</a></li>
-        <li><a href="tarifs.html">Tarifs</a></li>
-        <li><a href="commande.html">Commande</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="contact.html">Contact</a></li>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html"><span class="nav-item-text">Accueil</span></a></li>
+        <li><a href="a-propos.html"><span class="nav-item-text">À propos</span></a></li>
+        <li><a href="tarifs.html"><span class="nav-item-text">Tarifs</span></a></li>
+        <li><a href="commande.html"><span class="nav-item-text">Commande</span></a></li>
+        <li><a href="blog.html"><span class="nav-item-text">Blog</span></a></li>
+        <li><a href="contact.html"><span class="nav-item-text">Contact</span></a></li>
       </ul>
-      <div class="burger" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      <div class="close-menu" onclick="toggleMenu()">×</div>
     </nav>
+
+    <div class="burger" id="burger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="close-menu" id="close-menu">✕</div>
   </header>
 
-  <main>
+  <!-- Contenu principal -->
+  <main class="about-page">
     <section class="profil">
-      <img src="Profil.jpg" alt="Chicho" class="about-image" />
+      <img src="Profil.jpg" alt="Chicho" class="photo-arrondie small-photo">
       <div class="bio">
         <p>Je m’appelle Chicho. Mon studio, c’est ma chambre. Mon son, c’est mon monde.</p>
         <p>Je mixe depuis plus de 10 ans avec les meilleurs outils professionnels du marché. Chaque son que je traite, je le pousse à son niveau maximal.</p>
@@ -108,16 +55,5 @@
     <p>&copy; 2025 BlockTune. Tous droits réservés.</p>
   </footer>
 
-  <script>
-    function toggleMenu() {
-      const navLinks = document.querySelector('.nav-links');
-      const burger = document.querySelector('.burger');
-      const closeMenu = document.querySelector('.close-menu');
-      document.body.classList.toggle('menu-open');
-      navLinks.classList.toggle('active');
-      burger.classList.toggle('hide');
-      closeMenu.classList.toggle('show');
-    }
-  </script>
 </body>
 </html>
