@@ -130,7 +130,7 @@ nav ul li a .chevron {
     height: 100vh;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: 60px 20px 30px 20px; /* réduit le padding top */
+    padding: 60px 20px 30px 20px;
     z-index: 9999;
     gap: 25px;
   }
@@ -163,7 +163,6 @@ nav ul li a .chevron {
     color: white;
   }
 
-  /* Chevron auto généré sur mobile */
   nav ul li a::after {
     content: "›";
     color: white;
@@ -195,7 +194,7 @@ nav ul li a .chevron {
   }
 
   main {
-    padding: 30px 20px 25px 20px; /* réduit top padding pour centrer + rapprocher */
+    padding: 30px 20px 25px 20px;
   }
 
   footer {
@@ -312,4 +311,14 @@ footer {
 
 .lang-switcher {
   display: none;
+}
+
+/* ✅ Image de profil optimisée pour À propos */
+.photo-arrondie.small-photo {
+  width: 200px;
+  max-width: 80%;
+  display: block;
+  margin: 30px auto 20px auto;
+  border-radius: 20px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.4);
 }
