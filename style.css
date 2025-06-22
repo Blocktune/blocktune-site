@@ -10,6 +10,11 @@ body {
   font-size: 15px;
 }
 
+/* Empêche le scroll quand le menu est ouvert */
+body.menu-open {
+  overflow: hidden;
+}
+
 /* Header */
 header.navbar {
   display: flex;
@@ -102,10 +107,10 @@ nav ul li a .chevron {
 .close-menu {
   display: none;
   position: fixed;
-  right: 24px;
-  top: 18px;
-  font-size: 30px;
-  color: white;
+  right: 20px;
+  top: 20px;
+  font-size: 32px;
+  color: black;
   z-index: 10001;
   cursor: pointer;
 }
@@ -118,14 +123,14 @@ nav ul li a .chevron {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.97);
+    background-color: white;
     width: 100vw;
     height: 100vh;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: 90px 30px 20px;
-    gap: 0;
+    padding: 80px 30px 30px 30px;
     z-index: 9999;
+    gap: 30px;
   }
 
   nav ul.nav-links.active {
@@ -137,29 +142,29 @@ nav ul li a .chevron {
   }
 
   nav ul li a {
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: 500;
     width: 100%;
-    padding: 14px 0;
-    border-radius: 0;
-    background: transparent;
-    color: white;
+    padding: 16px 10px;
+    color: black;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: none;
-    margin: 0;
+    background: transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0;
   }
 
   nav ul li a:hover,
   nav ul li a:focus {
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0.05);
     color: black;
   }
 
   nav ul li a .chevron {
     display: inline-block;
     font-size: 20px;
-    color: #888;
+    color: #666;
   }
 
   .burger {
@@ -176,6 +181,7 @@ nav ul li a .chevron {
 
   header.navbar {
     justify-content: flex-start;
+    background-color: white;
   }
 
   .navbar .logo {
