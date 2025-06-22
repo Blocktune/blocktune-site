@@ -71,7 +71,7 @@ nav ul li a:focus {
   text-decoration: none;
 }
 
-/* Chevron décoratif */
+/* Chevron décoratif (caché sur desktop) */
 nav ul li a .chevron {
   display: none;
   margin-left: auto;
@@ -101,10 +101,10 @@ nav ul li a .chevron {
 /* Bouton croix pour fermer menu */
 .close-menu {
   display: none;
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  font-size: 28px;
+  position: fixed;
+  right: 24px;
+  top: 18px;
+  font-size: 30px;
   color: white;
   z-index: 10001;
   cursor: pointer;
@@ -118,12 +118,13 @@ nav ul li a .chevron {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: rgba(0, 0, 0, 0.97);
     width: 100vw;
     height: 100vh;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
-    padding-left: 40px;
+    padding: 90px 30px 20px;
+    gap: 0;
     z-index: 9999;
   }
 
@@ -132,21 +133,21 @@ nav ul li a .chevron {
   }
 
   nav ul.nav-links li {
-    margin: 20px 0;
     width: 100%;
   }
 
   nav ul li a {
     font-size: 18px;
     width: 100%;
-    padding: 14px 24px;
+    padding: 14px 0;
     border-radius: 0;
     background: transparent;
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: none;
+    margin: 0;
   }
 
   nav ul li a:hover,
@@ -157,6 +158,8 @@ nav ul li a .chevron {
 
   nav ul li a .chevron {
     display: inline-block;
+    font-size: 20px;
+    color: #888;
   }
 
   .burger {
@@ -278,4 +281,14 @@ footer {
 /* Loader masqué */
 #loader {
   display: none;
+}
+
+/* Utilitaire mobile uniquement */
+.mobile-only {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .mobile-only {
+    display: inline-block;
+  }
 }
