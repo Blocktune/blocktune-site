@@ -2,21 +2,23 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   const burger = document.querySelector('.burger');
-  const closeBtn = document.createElement('div');
   const navLinks = document.querySelector('nav ul.nav-links');
 
-  // Ajout du bouton croix dynamique
+  // Ajout du bouton croix dynamiquement dans le header
+  const closeBtn = document.createElement('div');
   closeBtn.classList.add('close-menu');
-  closeBtn.innerHTML = '&times;'; // croix ✕
-  document.body.appendChild(closeBtn);
+  closeBtn.innerHTML = '&times;';
+  document.querySelector('header.navbar').appendChild(closeBtn);
 
   if (burger && navLinks) {
+    // Ouvrir le menu
     burger.addEventListener('click', () => {
       navLinks.classList.add('active');
       burger.classList.add('hide');
       closeBtn.classList.add('show');
     });
 
+    // Fermer le menu avec la croix
     closeBtn.addEventListener('click', () => {
       navLinks.classList.remove('active');
       burger.classList.remove('hide');
