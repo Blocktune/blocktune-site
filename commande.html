@@ -57,6 +57,7 @@
       text-align: center;
       margin-top: 1.5rem;
       font-style: italic;
+      line-height: 1.7em;
     }
   </style>
 </head>
@@ -165,13 +166,17 @@
       alert("Adresse copiée !");
     }
 
-    // ✅ N'affiche "Commande en cours..." qu'au clic réel
     document.addEventListener('DOMContentLoaded', () => {
       const form = document.getElementById('order-form');
       const status = document.getElementById('status-msg');
       if (form) {
         form.addEventListener('submit', () => {
-          status.textContent = "⏳ Envoi en cours... Merci de patienter.";
+          status.innerHTML = `
+            ⏳ Envoi en cours... Merci de patienter.<br><br>
+            ⚠️ Ne quittez pas cette page et ne la rafraîchissez pas.<br>
+            Le traitement peut prendre <strong>jusqu’à 2 minutes</strong> en raison d’une surcharge temporaire du serveur.<br><br>
+            Vous serez automatiquement redirigé vers la page de confirmation.
+          `;
         });
       }
     });
