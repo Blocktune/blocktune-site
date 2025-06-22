@@ -12,7 +12,7 @@
 <body>
 
   <!-- Sélecteur de langue -->
-  <div class="lang-switcher" style="text-align: right; padding: 10px 20px;">
+  <div class="lang-switcher">
     <select onchange="window.location.href=this.value">
       <option value="#" selected>Français</option>
       <option value="#">English</option>
@@ -29,25 +29,26 @@
       <img src="logo_blocktune.png" alt="Logo BlockTune" class="logo">
     </a>
 
+    <!-- Menu -->
     <nav class="nav-container">
       <ul class="nav-links" id="nav-links">
-        <li><a href="index.html"><span class="chevron">›</span> Accueil</a></li>
-        <li><a href="a-propos.html"><span class="chevron">›</span> À propos</a></li>
-        <li><a href="tarifs.html"><span class="chevron">›</span> Tarifs</a></li>
-        <li><a href="commande.html"><span class="chevron">›</span> Commande</a></li>
-        <li><a href="blog.html"><span class="chevron">›</span> Blog</a></li>
-        <li><a href="contact.html"><span class="chevron">›</span> Contact</a></li>
+        <li><a href="index.html"><span class="nav-item-text">Accueil</span><span class="chevron">›</span></a></li>
+        <li><a href="a-propos.html"><span class="nav-item-text">À propos</span><span class="chevron">›</span></a></li>
+        <li><a href="tarifs.html"><span class="nav-item-text">Tarifs</span><span class="chevron">›</span></a></li>
+        <li><a href="commande.html"><span class="nav-item-text">Commande</span><span class="chevron">›</span></a></li>
+        <li><a href="blog.html"><span class="nav-item-text">Blog</span><span class="chevron">›</span></a></li>
+        <li><a href="contact.html"><span class="nav-item-text">Contact</span><span class="chevron">›</span></a></li>
       </ul>
     </nav>
 
-    <!-- Burger menu (3 traits) -->
+    <!-- Menu burger -->
     <div class="burger" id="burger">
       <div></div>
       <div></div>
       <div></div>
     </div>
 
-    <!-- Bouton croix caché par défaut -->
+    <!-- Croix (fermer menu) -->
     <div class="close-menu" id="close-menu" style="display: none;">
       ✕
     </div>
