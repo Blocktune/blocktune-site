@@ -1,8 +1,14 @@
 /* Global Styles */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+html, body {
   margin: 0;
   padding: 0;
+  background-color: #000;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: url("background_studio_dark.png") no-repeat center center fixed;
   background-size: cover;
   backdrop-filter: blur(3px);
@@ -185,6 +191,7 @@ nav ul li a .chevron {
 
   .navbar .logo {
     margin-right: auto;
+    height: 50px !important;
   }
 }
 
@@ -262,6 +269,7 @@ footer {
   margin-top: 60px;
   color: #aaa;
   font-size: 14px;
+  width: 100%;
 }
 
 .signature {
