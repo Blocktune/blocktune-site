@@ -53,10 +53,22 @@ nav ul li a {
   text-decoration: none;
   font-weight: 500;
   font-size: 15px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-nav ul li a:hover {
-  text-decoration: underline;
+nav ul li a:hover,
+nav ul li a:focus {
+  background-color: white;
+  color: black;
+  text-decoration: none;
+}
+
+/* Chevron décoratif */
+nav ul li a .chevron {
+  margin-right: 10px;
+  font-size: 16px;
 }
 
 /* Burger Menu */
@@ -64,8 +76,10 @@ nav ul li a:hover {
   display: none;
   flex-direction: column;
   cursor: pointer;
-  margin-left: 20px;
-  margin-right: 10px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 10000;
 }
 
 .burger span,
@@ -75,6 +89,18 @@ nav ul li a:hover {
   background-color: #fff;
   margin: 4px 0;
   transition: 0.3s;
+}
+
+/* Bouton croix pour fermer menu */
+.close-menu {
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 28px;
+  color: white;
+  z-index: 10001;
+  cursor: pointer;
 }
 
 /* Mobile Navigation */
@@ -102,12 +128,21 @@ nav ul li a:hover {
     margin: 20px 0;
   }
 
+  nav ul li a {
+    font-size: 17px;
+    padding: 12px 24px;
+  }
+
   .burger {
     display: flex;
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    z-index: 10000;
+  }
+
+  .burger.hide {
+    display: none;
+  }
+
+  .close-menu.show {
+    display: block;
   }
 
   header.navbar {
