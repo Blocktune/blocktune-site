@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
       navLinks.classList.add('active');
       burger.classList.add('hide');
       closeBtn.classList.add('show');
+      document.body.classList.add('menu-open'); // Désactive scroll
     });
 
     // Fermer le menu avec la croix
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
       navLinks.classList.remove('active');
       burger.classList.remove('hide');
       closeBtn.classList.remove('show');
+      document.body.classList.remove('menu-open'); // Réactive scroll
     });
   }
 
