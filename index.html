@@ -12,7 +12,7 @@
 <body>
 
   <!-- Sélecteur de langue -->
-  <div class="lang-switcher">
+  <div class="lang-switcher" style="text-align: right; padding: 10px 20px;">
     <select onchange="window.location.href=this.value">
       <option value="#" selected>Français</option>
       <option value="#">English</option>
@@ -23,38 +23,30 @@
     </select>
   </div>
 
-  <!-- Navbar modernisée -->
+  <!-- Barre de navigation -->
   <header class="navbar">
-    <div class="navbar-left">
-      <a href="index.html">
-        <img src="logo_blocktune.png" alt="Logo BlockTune" class="logo">
-      </a>
-    </div>
-    <div class="navbar-right">
-      <nav class="desktop-nav">
-        <ul>
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="a-propos.html">À propos</a></li>
-          <li><a href="tarifs.html">Tarifs</a></li>
-          <li><a href="commande.html">Commande</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="mobile-nav">
-        <button id="menu-toggle">Menu</button>
-        <ul id="mobile-menu" class="hidden">
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="a-propos.html">À propos</a></li>
-          <li><a href="tarifs.html">Tarifs</a></li>
-          <li><a href="commande.html">Commande</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+    <a href="index.html">
+      <img src="logo_blocktune.png" alt="Logo BlockTune" class="logo">
+    </a>
+
+    <nav>
+      <div class="burger" id="burger">
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
-    </div>
+      <ul id="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="tarifs.html">Tarifs</a></li>
+        <li><a href="commande.html">Commande</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
+  <!-- Contenu principal -->
   <main>
     <section class="intro">
       <h1>Chaque détail compte. Chez BlockTune, ton son mérite la même exigence qu’un hit mondial.</h1>
@@ -81,5 +73,6 @@
   <footer>
     <p>&copy; 2025 BlockTune. Tous droits réservés.</p>
   </footer>
+
 </body>
 </html>
