@@ -97,10 +97,17 @@ nav ul li a:hover {
 
   .burger {
     display: flex;
+    position: absolute;
+    right: 20px;
+    top: 20px;
   }
 
   header.navbar {
-    justify-content: space-between;
+    justify-content: flex-start;
+  }
+
+  .navbar .logo {
+    margin-right: auto;
   }
 }
 
