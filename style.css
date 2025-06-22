@@ -14,12 +14,12 @@ body.menu-open {
   overflow: hidden;
 }
 
-/* Header - couleur unifiée sur PC et mobile */
+/* Header - couleur unifiée */
 header.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #1a1a1a; /* uniformisé */
+  background-color: #1a1a1a;
   padding: 8px 20px;
   position: sticky;
   top: 0;
@@ -100,7 +100,6 @@ nav ul li a .chevron {
   transition: 0.3s;
 }
 
-/* Croix pour fermer menu */
 .close-menu {
   display: none;
   position: fixed;
@@ -148,7 +147,7 @@ nav ul li a .chevron {
     justify-content: space-between;
     align-items: center;
     background: transparent;
-    border-bottom: none; /* Suppression des traits */
+    border-bottom: none;
     border-radius: 0;
   }
 
@@ -162,6 +161,8 @@ nav ul li a .chevron {
     display: inline-block;
     font-size: 20px;
     color: white;
+    margin-left: auto;
+    flex-shrink: 0;
   }
 
   .burger {
