@@ -9,20 +9,9 @@
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
   <style>
-    .crypto-infos {
-      text-align: center;
-      margin-top: 3rem;
-    }
-
-    .crypto-infos h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .crypto-infos p {
-      font-size: 1rem;
-      color: #ccc;
-    }
+    .crypto-infos { text-align: center; margin-top: 3rem; }
+    .crypto-infos h2 { font-size: 2rem; margin-bottom: 1rem; }
+    .crypto-infos p { font-size: 1rem; color: #ccc; }
 
     .wallet {
       background-color: #111;
@@ -33,12 +22,7 @@
       box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
     }
 
-    .wallet h3 {
-      color: white;
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-    }
-
+    .wallet h3 { color: white; font-size: 1.2rem; margin-bottom: 0.5rem; }
     .wallet-link {
       display: inline-block;
       font-family: monospace;
@@ -48,18 +32,8 @@
       word-break: break-all;
       cursor: pointer;
     }
-
-    .wallet-link:hover {
-      color: #fff;
-    }
-
-    .qrcode {
-      width: 66%;
-      max-width: 200px;
-      margin: 15px auto;
-      display: block;
-    }
-
+    .wallet-link:hover { color: #fff; }
+    .qrcode { width: 66%; max-width: 200px; margin: 15px auto; display: block; }
     .wallet button {
       display: block;
       margin: 10px auto 0 auto;
@@ -70,24 +44,19 @@
       border-radius: 8px;
       cursor: pointer;
     }
-
-    .wallet button:hover {
-      background-color: #555;
-    }
+    .wallet button:hover { background-color: #555; }
 
     @media screen and (max-width: 600px) {
-      .wallet {
-        width: 90%;
-        padding: 15px;
-      }
+      .wallet { width: 90%; padding: 15px; }
+      .qrcode { width: 75%; }
+      .wallet-link { font-size: 0.9rem; }
+    }
 
-      .qrcode {
-        width: 75%;
-      }
-
-      .wallet-link {
-        font-size: 0.9rem;
-      }
+    #status-msg {
+      color: #ccc;
+      text-align: center;
+      margin-top: 1.5rem;
+      font-style: italic;
     }
   </style>
 </head>
@@ -108,9 +77,7 @@
         <li><a href="contact.html"><span class="nav-item-text">Contact</span></a></li>
       </ul>
     </nav>
-    <div class="burger" id="burger">
-      <div></div><div></div><div></div>
-    </div>
+    <div class="burger" id="burger"><div></div><div></div><div></div></div>
     <div class="close-menu" id="close-menu">✕</div>
   </header>
 
@@ -118,7 +85,7 @@
   <main class="commande">
     <h1>Passer commande</h1>
 
-    <form action="https://formsubmit.co/blocktune@tutamail.com" method="POST">
+    <form action="https://formsubmit.co/blocktune@tutamail.com" method="POST" onsubmit="showSendingMessage()">
       <input type="hidden" name="_redirect" value="https://blocktune-site.onrender.com/merci.html">
       <input type="hidden" name="_captcha" value="false">
 
@@ -136,8 +103,12 @@
         <option value="Mix/Mastering">🎧 Mix/Mastering (1 son)</option>
         <option value="Mix+Mastering Premium">🔥 Mix + Mastering Premium (2 sons)</option>
         <option value="Topline">🎤 Topline uniquement</option>
-        <option value="Livraison express">⚡ Livraison express</option>
       </select>
+
+      <label>
+        <input type="checkbox" name="express" value="Oui">
+        ⚡ Livraison express (+10 USDT)
+      </label>
 
       <label>Style musical</label>
       <select name="style">
@@ -159,6 +130,7 @@
       <textarea name="message"></textarea>
 
       <button type="submit">Envoyer la commande</button>
+      <div id="status-msg"></div>
     </form>
 
     <!-- Paiement crypto -->
@@ -192,6 +164,11 @@
       const text = document.getElementById(id).textContent;
       navigator.clipboard.writeText(text);
       alert("Adresse copiée !");
+    }
+
+    function showSendingMessage() {
+      const msg = document.getElementById("status-msg");
+      msg.textContent = "⏳ Envoi en cours... Merci de patienter.";
     }
   </script>
 </body>
