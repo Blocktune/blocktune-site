@@ -7,6 +7,66 @@
   <title>À propos – BlockTune</title>
   <link rel="icon" href="favicon.ico" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .about-image {
+      width: 80%;
+      max-width: 300px;
+      border-radius: 16px;
+      display: block;
+      margin: 20px auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+
+    @media (max-width: 768px) {
+      .burger {
+        position: absolute;
+        right: 20px;
+        top: 28px;
+        cursor: pointer;
+        z-index: 999;
+      }
+    }
+
+    .burger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 5px 0;
+      transition: 0.4s;
+    }
+
+    .close-menu {
+      display: none;
+    }
+
+    .nav-links.active {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 60px;
+      right: 0;
+      background-color: #111;
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      z-index: 998;
+    }
+
+    .burger.hide {
+      display: none;
+    }
+
+    .close-menu.show {
+      display: block;
+      position: fixed;
+      top: 20px;
+      right: 25px;
+      font-size: 30px;
+      color: white;
+      z-index: 999;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
   <header class="navbar">
@@ -33,7 +93,7 @@
 
   <main>
     <section class="profil">
-      <img src="Profil.jpg" alt="Chicho" class="about-image" />
+      <img src="profil.jpg" alt="Chicho" class="about-image" />
       <div class="bio">
         <p>Je m’appelle Chicho. Mon studio, c’est ma chambre. Mon son, c’est mon monde.</p>
         <p>Je mixe depuis plus de 10 ans avec les meilleurs outils professionnels du marché. Chaque son que je traite, je le pousse à son niveau maximal.</p>
