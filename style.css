@@ -157,12 +157,14 @@ nav ul li a .chevron {
     color: white;
   }
 
-  nav ul li a .chevron {
-    display: inline-block;
-    font-size: 20px;
+  /* Chevron auto généré sur mobile */
+  nav ul li a::after {
+    content: "›";
     color: white;
+    font-size: 22px;
     margin-left: auto;
-    flex-shrink: 0;
+    line-height: 1;
+    font-weight: normal;
   }
 
   .burger {
@@ -273,6 +275,7 @@ footer {
   display: none;
 }
 
+/* Mobile only et langue */
 .mobile-only {
   display: none;
 }
@@ -282,7 +285,6 @@ footer {
   }
 }
 
-/* Sélecteur langue désactivé */
 .lang-switcher {
   display: none;
 }
