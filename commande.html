@@ -8,6 +8,88 @@
   <link rel="icon" href="favicon.ico" />
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
+  <style>
+    .crypto-infos {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .crypto-infos h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .crypto-infos p {
+      font-size: 1rem;
+      color: #ccc;
+    }
+
+    .wallet {
+      background-color: #111;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 30px auto;
+      max-width: 400px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .wallet h3 {
+      color: white;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .wallet-link {
+      display: inline-block;
+      font-family: monospace;
+      color: #ccc;
+      text-decoration: none;
+      margin-bottom: 10px;
+      word-break: break-all;
+      cursor: pointer;
+    }
+
+    .wallet-link:hover {
+      color: #fff;
+    }
+
+    .qrcode {
+      width: 66%;
+      max-width: 200px;
+      margin: 15px auto;
+      display: block;
+    }
+
+    .wallet button {
+      display: block;
+      margin: 10px auto 0 auto;
+      padding: 8px 14px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .wallet button:hover {
+      background-color: #555;
+    }
+
+    @media screen and (max-width: 600px) {
+      .wallet {
+        width: 90%;
+        padding: 15px;
+      }
+
+      .qrcode {
+        width: 75%;
+      }
+
+      .wallet-link {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -16,7 +98,6 @@
     <a href="index.html">
       <img src="logo_blocktune.png" alt="Logo BlockTune" class="logo">
     </a>
-
     <nav class="nav-container">
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html"><span class="nav-item-text">Accueil</span></a></li>
@@ -27,11 +108,8 @@
         <li><a href="contact.html"><span class="nav-item-text">Contact</span></a></li>
       </ul>
     </nav>
-
     <div class="burger" id="burger">
-      <div></div>
-      <div></div>
-      <div></div>
+      <div></div><div></div><div></div>
     </div>
     <div class="close-menu" id="close-menu">✕</div>
   </header>
@@ -83,6 +161,7 @@
       <button type="submit">Envoyer la commande</button>
     </form>
 
+    <!-- Paiement crypto -->
     <section class="crypto-infos">
       <h2>Paiement</h2>
       <p>⚠️ <strong>Commande validée uniquement après paiement reçu</strong></p>
@@ -90,14 +169,14 @@
 
       <div class="wallet">
         <h3>Bitcoin (BTC)</h3>
-        <p><a href="#" id="btc" onclick="copy('btc')" class="wallet-link">bc1qqvctuamud0wn649snnefjnzugs0nqc38ghkfrd</a></p>
+        <a href="#" id="btc" class="wallet-link" onclick="copy('btc')">bc1qqvctuamud0wn649snnefjnzugs0nqc38ghkfrd</a>
         <img src="qrcode_btc.png" alt="QR BTC" class="qrcode">
         <button onclick="copy('btc')">Copier l’adresse</button>
       </div>
 
       <div class="wallet">
         <h3>Ethereum / USDT (ERC20)</h3>
-        <p><a href="#" id="eth" onclick="copy('eth')" class="wallet-link">0x0E4C47af698D83cfa287225D0A0Ba6dADA45f5fC</a></p>
+        <a href="#" id="eth" class="wallet-link" onclick="copy('eth')">0x0E4C47af698D83cfa287225D0A0Ba6dADA45f5fC</a>
         <img src="qrcode_eth.png" alt="QR ETH" class="qrcode">
         <button onclick="copy('eth')">Copier l’adresse</button>
       </div>
