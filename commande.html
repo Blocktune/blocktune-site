@@ -85,8 +85,7 @@
   <main class="commande">
     <h1>Passer commande</h1>
 
-    <!-- ✅ Le formulaire fonctionne 100% avec redirection + envoi mail -->
-    <form action="https://formsubmit.co/blocktune@tutamail.com" method="POST">
+    <form action="https://formsubmit.co/blocktune@tutamail.com" method="POST" id="order-form">
       <input type="hidden" name="_next" value="https://blocktune-site.onrender.com/merci.html">
       <input type="hidden" name="_captcha" value="false">
 
@@ -106,7 +105,6 @@
         <option value="Topline">🎤 Topline uniquement</option>
       </select>
 
-      <!-- Livraison express = champ optionnel décoché -->
       <label>
         <input type="checkbox" name="express" value="Oui">
         ⚡ Livraison express (+10 USDT)
@@ -131,11 +129,10 @@
       <label>Message complémentaire</label>
       <textarea name="message"></textarea>
 
-      <button type="submit" onclick="showSendingMessage()">Envoyer la commande</button>
+      <button type="submit">Envoyer la commande</button>
       <div id="status-msg"></div>
     </form>
 
-    <!-- Paiement crypto -->
     <section class="crypto-infos">
       <h2>Paiement</h2>
       <p>⚠️ <strong>Commande validée uniquement après paiement reçu</strong></p>
@@ -161,7 +158,6 @@
     <p>&copy; 2025 BlockTune. Tous droits réservés.</p>
   </footer>
 
-  <!-- JS inline minimal -->
   <script>
     function copy(id) {
       const text = document.getElementById(id).textContent;
@@ -169,10 +165,16 @@
       alert("Adresse copiée !");
     }
 
-    function showSendingMessage() {
-      const msg = document.getElementById("status-msg");
-      msg.textContent = "⏳ Envoi en cours... Merci de patienter.";
-    }
+    // ✅ N'affiche "Commande en cours..." qu'au clic réel
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('order-form');
+      const status = document.getElementById('status-msg');
+      if (form) {
+        form.addEventListener('submit', () => {
+          status.textContent = "⏳ Envoi en cours... Merci de patienter.";
+        });
+      }
+    });
   </script>
 </body>
 </html>
