@@ -1,13 +1,26 @@
 // script.js – Interactions BlockTune
 
-// Menu burger toggle
 document.addEventListener('DOMContentLoaded', () => {
   const burger = document.querySelector('.burger');
+  const closeBtn = document.createElement('div');
   const navLinks = document.querySelector('nav ul.nav-links');
+
+  // Ajout du bouton croix dynamique
+  closeBtn.classList.add('close-menu');
+  closeBtn.innerHTML = '&times;'; // croix ✕
+  document.body.appendChild(closeBtn);
 
   if (burger && navLinks) {
     burger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
+      navLinks.classList.add('active');
+      burger.classList.add('hide');
+      closeBtn.classList.add('show');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      burger.classList.remove('hide');
+      closeBtn.classList.remove('show');
     });
   }
 
