@@ -1,30 +1,45 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact – BlockTune</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Contacte le studio BlockTune pour une demande de mix ou mastering">
-  <link rel="icon" href="favicon.ico">
-  <link rel="stylesheet" href="style.css">
+  <title>Contact – BlockTune</title>
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
+
+  <!-- Barre de navigation -->
   <header class="navbar">
-  <a href="index.html">
-    <img src="logo_blocktune.png" alt="BlockTune Logo">
-  </a>
-    <nav>
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="a-propos.html">À propos</a></li>
-        <li><a href="tarifs.html">Tarifs</a></li>
-        <li><a href="commande.html">Commande</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
+    <a href="index.html">
+      <img src="logo_blocktune.png" alt="Logo BlockTune" class="logo">
+    </a>
+
+    <nav class="nav-container">
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html"><span class="nav-item-text">Accueil</span></a></li>
+        <li><a href="a-propos.html"><span class="nav-item-text">À propos</span></a></li>
+        <li><a href="tarifs.html"><span class="nav-item-text">Tarifs</span></a></li>
+        <li><a href="commande.html"><span class="nav-item-text">Commande</span></a></li>
+        <li><a href="blog.html"><span class="nav-item-text">Blog</span></a></li>
+        <li><a href="contact.html" class="active"><span class="nav-item-text">Contact</span></a></li>
       </ul>
     </nav>
+
+    <!-- Menu burger -->
+    <div class="burger" id="burger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <!-- Croix fermeture -->
+    <div class="close-menu" id="close-menu">✕</div>
   </header>
 
+  <!-- Contenu principal -->
   <main class="contact">
     <h1>Contact</h1>
     <p>Une question, une précision ? Tu peux me contacter ici, ou m’envoyer tes pistes directement par e-mail.</p>
@@ -32,6 +47,7 @@
     <form action="https://formsubmit.co/blocktune@tutamail.com" method="POST">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="box">
+
       <label>Nom / Pseudo</label>
       <input type="text" name="nom" required>
 
@@ -44,11 +60,14 @@
       <button type="submit">Envoyer</button>
     </form>
 
-    <p>📨 Tu peux aussi envoyer directement tes fichiers audio à : <strong>blocktune@tutamail.com</strong></p>
+    <p>📨 Tu peux aussi envoyer directement tes fichiers audio à :  
+      <strong>blocktune@tutamail.com</strong>
+    </p>
   </main>
 
   <footer>
     <p>&copy; 2025 BlockTune. Tous droits réservés.</p>
   </footer>
+
 </body>
 </html>
