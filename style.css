@@ -10,7 +10,6 @@ body {
   font-size: 15px;
 }
 
-/* Empêche le scroll quand le menu est ouvert */
 body.menu-open {
   overflow: hidden;
 }
@@ -33,7 +32,6 @@ header.navbar {
   width: auto;
 }
 
-/* Nav container */
 nav.nav-container {
   display: flex;
   justify-content: center;
@@ -42,7 +40,6 @@ nav.nav-container {
   position: relative;
 }
 
-/* Desktop Menu */
 nav ul.nav-links {
   list-style: none;
   display: flex;
@@ -76,7 +73,6 @@ nav ul li a:focus {
   text-decoration: none;
 }
 
-/* Chevron décoratif (caché sur desktop) */
 nav ul li a .chevron {
   display: none;
   margin-left: auto;
@@ -110,7 +106,7 @@ nav ul li a .chevron {
   right: 20px;
   top: 20px;
   font-size: 32px;
-  color: black;
+  color: white; /* Modifié */
   z-index: 10001;
   cursor: pointer;
 }
@@ -123,7 +119,7 @@ nav ul li a .chevron {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: white;
+    background-color: #1a1a1a; /* Couleur sombre */
     width: 100vw;
     height: 100vh;
     justify-content: flex-start;
@@ -146,25 +142,25 @@ nav ul li a .chevron {
     font-weight: 500;
     width: 100%;
     padding: 16px 10px;
-    color: black;
+    color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: transparent;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 0;
   }
 
   nav ul li a:hover,
   nav ul li a:focus {
-    background-color: rgba(0, 0, 0, 0.05);
-    color: black;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
   }
 
   nav ul li a .chevron {
     display: inline-block;
     font-size: 20px;
-    color: #666;
+    color: white; /* Modifié */
   }
 
   .burger {
@@ -181,18 +177,12 @@ nav ul li a .chevron {
 
   header.navbar {
     justify-content: flex-start;
-    background-color: white;
+    background-color: #1a1a1a; /* même que menu */
   }
 
   .navbar .logo {
     margin-right: auto;
   }
-}
-
-/* Langue */
-.lang-switcher {
-  text-align: right;
-  padding: 10px 20px;
 }
 
 /* Main Content */
@@ -204,7 +194,6 @@ main {
   border-radius: 12px;
 }
 
-/* Audio Section */
 .audio-player {
   margin-bottom: 25px;
 }
@@ -213,7 +202,6 @@ main {
   margin-bottom: 10px;
 }
 
-/* About Image */
 .about-image {
   display: block;
   margin: 0 auto 15px;
@@ -222,7 +210,6 @@ main {
   width: 240px;
 }
 
-/* Blog Post */
 .blog-post {
   margin-bottom: 60px;
 }
@@ -235,7 +222,6 @@ main {
   line-height: 1.6;
 }
 
-/* Form */
 form {
   display: flex;
   flex-direction: column;
@@ -266,7 +252,6 @@ form button:hover {
   background-color: #17a74a;
 }
 
-/* Footer */
 footer {
   text-align: center;
   padding: 20px;
@@ -276,7 +261,6 @@ footer {
   font-size: 14px;
 }
 
-/* Signature Accueil */
 .signature {
   font-style: italic;
   font-size: 14px;
@@ -284,7 +268,6 @@ footer {
   margin-top: 10px;
 }
 
-/* Loader masqué */
 #loader {
   display: none;
 }
@@ -297,4 +280,9 @@ footer {
   .mobile-only {
     display: inline-block;
   }
+}
+
+/* ❌ Suppression du sélecteur de langue */
+.lang-switcher {
+  display: none;
 }
