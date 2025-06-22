@@ -78,23 +78,49 @@ document.addEventListener('DOMContentLoaded', () => {
     audio.addEventListener('play', () => draw());
   });
 
-  // Gère l'envoi du formulaire avec loader
+  // Animation de chargement du formulaire
   const form = document.querySelector('form');
   if (form) {
     const loader = document.createElement('div');
     loader.id = 'loader';
     loader.innerHTML = `<div class="spinner"></div><p>Commande en cours...</p>`;
     loader.style.display = 'none';
+    loader.style.position = 'fixed';
+    loader.style.top = '0';
+    loader.style.left = '0';
+    loader.style.width = '100%';
+    loader.style.height = '100%';
+    loader.style.background = 'rgba(0,0,0,0.85)';
+    loader.style.color = '#fff';
+    loader.style.zIndex = '10000';
+    loader.style.fontSize = '18px';
+    loader.style.display = 'flex';
+    loader.style.flexDirection = 'column';
+    loader.style.alignItems = 'center';
+    loader.style.justifyContent = 'center';
+
+    const spinnerStyle = document.createElement('style');
+    spinnerStyle.textContent = `
+      .spinner {
+        border: 5px solid rgba(255, 255, 255, 0.1);
+        border-top: 5px solid #1DB954;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        animation: spin 1s linear infinite;
+        margin-bottom: 15px;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    `;
+    document.head.appendChild(spinnerStyle);
     document.body.appendChild(loader);
 
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
+    form.addEventListener('submit', () => {
       loader.style.display = 'flex';
       form.style.opacity = '0.4';
-      setTimeout(() => {
-        form.submit();
-        window.location.href = 'merci.html';
-      }, 2200);
     });
   }
 });
