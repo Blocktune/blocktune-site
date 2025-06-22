@@ -8,6 +8,55 @@
   <link rel="icon" href="favicon.ico" />
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
+  <style>
+    /* Style spécifique aux tarifs */
+    .tarif-boxes {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .tarif-boxes .box {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 18px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: white;
+      transition: background-color 0.3s, transform 0.2s;
+      display: block;
+    }
+
+    .tarif-boxes .box:hover {
+      background-color: rgba(255, 255, 255, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .tarif-boxes .box h2 {
+      margin: 0;
+      font-size: 18px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .tarif-boxes .box p {
+      margin: 5px 0 0;
+      color: #ccc;
+      font-size: 15px;
+    }
+
+    @media (min-width: 768px) {
+      .tarif-boxes {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .tarif-boxes .box {
+        width: 48%;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -28,14 +77,12 @@
       </ul>
     </nav>
 
-    <!-- Menu burger -->
     <div class="burger" id="burger">
       <div></div>
       <div></div>
       <div></div>
     </div>
 
-    <!-- Croix fermeture -->
     <div class="close-menu" id="close-menu">✕</div>
   </header>
 
