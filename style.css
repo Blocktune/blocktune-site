@@ -199,7 +199,16 @@ nav ul li a .chevron {
   }
 
   footer {
-    margin-top: 30px;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+
+  footer p,
+  footer .signature {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
