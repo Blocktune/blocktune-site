@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
       navLinks.classList.add('active');
       burger.classList.add('hide');
       closeBtn.classList.add('show');
+      document.body.classList.add('menu-open'); // Désactive scroll
     });
 
     // Fermer le menu avec la croix
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
       navLinks.classList.remove('active');
       burger.classList.remove('hide');
       closeBtn.classList.remove('show');
+      document.body.classList.remove('menu-open'); // Réactive scroll
     });
   }
 
@@ -30,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.copy-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const target = btn.getAttribute('data-copy');
-      const text = document.querySelector(#${target}).textContent;
+      const text = document.querySelector(`#${target}`).textContent;
       navigator.clipboard.writeText(text).then(() => {
         btn.textContent = "Copié !";
         setTimeout(() => (btn.textContent = "Copier"), 2000);
@@ -70,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
       let x = 0;
       for (let i = 0; i < bufferLength; i++) {
         const barHeight = dataArray[i] / 2;
-        ctx.fillStyle = rgb(${barHeight + 100},${barHeight + 50},200);
+        ctx.fillStyle = `rgb(${barHeight + 100},${barHeight + 50},200)`;
         ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
         x += barWidth + 1;
       }
