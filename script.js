@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
     audio.addEventListener('play', () => draw());
   });
 
-  // Animation de chargement du formulaire
+  // ✅ Loader : ne s'affiche QUE lors de l'envoi du formulaire
   const form = document.querySelector('form');
   if (form) {
     const loader = document.createElement('div');
@@ -94,10 +94,12 @@ document.addEventListener('DOMContentLoaded', () => {
     loader.style.color = '#fff';
     loader.style.zIndex = '10000';
     loader.style.fontSize = '18px';
-    loader.style.display = 'flex';
     loader.style.flexDirection = 'column';
     loader.style.alignItems = 'center';
     loader.style.justifyContent = 'center';
+
+    // Style par défaut (invisible tant que submit pas déclenché)
+    loader.style.display = 'none';
 
     const spinnerStyle = document.createElement('style');
     spinnerStyle.textContent = `
