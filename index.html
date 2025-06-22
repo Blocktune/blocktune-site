@@ -10,23 +10,49 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-<div id="loader">
-  <img src="logo_blocktune.png" alt="Logo BlockTune">
-</div>
+
+  <!-- Sélecteur de langue -->
+  <div class="lang-switcher">
+    <select onchange="window.location.href=this.value">
+      <option value="#" selected>Français</option>
+      <option value="#">English</option>
+      <option value="#">Español</option>
+      <option value="#">Deutsch</option>
+      <option value="#">Italiano</option>
+      <option value="#">Português</option>
+    </select>
+  </div>
+
+  <!-- Navbar modernisée -->
   <header class="navbar">
-  <a href="index.html">
-    <img src="logo_blocktune.png" alt="Logo BlockTune" class="logo">
-  </a>
-    <nav>
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="a-propos.html">À propos</a></li>
-        <li><a href="tarifs.html">Tarifs</a></li>
-        <li><a href="commande.html">Commande</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="navbar-left">
+      <a href="index.html">
+        <img src="logo_blocktune.png" alt="Logo BlockTune" class="logo">
+      </a>
+    </div>
+    <div class="navbar-right">
+      <nav class="desktop-nav">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="tarifs.html">Tarifs</a></li>
+          <li><a href="commande.html">Commande</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-nav">
+        <button id="menu-toggle">Menu</button>
+        <ul id="mobile-menu" class="hidden">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="tarifs.html">Tarifs</a></li>
+          <li><a href="commande.html">Commande</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
   </header>
 
   <main>
