@@ -31,7 +31,7 @@ header.navbar {
 /* Nav container */
 nav.nav-container {
   display: flex;
-  justify-content: center; /* centré sur desktop */
+  justify-content: center;
   align-items: center;
   flex-grow: 1;
   position: relative;
@@ -82,17 +82,24 @@ nav ul li a:hover {
   nav ul.nav-links {
     display: none;
     flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
     background-color: rgba(0, 0, 0, 0.95);
-    border-radius: 10px;
-    padding: 15px;
-    width: 180px;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    z-index: 9999;
   }
 
   nav ul.nav-links.active {
     display: flex;
+  }
+
+  nav ul.nav-links li {
+    margin: 20px 0;
   }
 
   .burger {
@@ -100,6 +107,7 @@ nav ul li a:hover {
     position: absolute;
     right: 20px;
     top: 20px;
+    z-index: 10000;
   }
 
   header.navbar {
