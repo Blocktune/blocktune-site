@@ -85,8 +85,9 @@
   <main class="commande">
     <h1>Passer commande</h1>
 
-    <form action="https://formsubmit.co/blocktune@tutamail.com" method="POST" onsubmit="showSendingMessage()">
-      <input type="hidden" name="_redirect" value="https://blocktune-site.onrender.com/merci.html">
+    <!-- ✅ Le formulaire fonctionne 100% avec redirection + envoi mail -->
+    <form action="https://formsubmit.co/blocktune@tutamail.com" method="POST">
+      <input type="hidden" name="_next" value="https://blocktune-site.onrender.com/merci.html">
       <input type="hidden" name="_captcha" value="false">
 
       <label>Nom / Pseudo</label>
@@ -105,6 +106,7 @@
         <option value="Topline">🎤 Topline uniquement</option>
       </select>
 
+      <!-- Livraison express = champ optionnel décoché -->
       <label>
         <input type="checkbox" name="express" value="Oui">
         ⚡ Livraison express (+10 USDT)
@@ -129,7 +131,7 @@
       <label>Message complémentaire</label>
       <textarea name="message"></textarea>
 
-      <button type="submit">Envoyer la commande</button>
+      <button type="submit" onclick="showSendingMessage()">Envoyer la commande</button>
       <div id="status-msg"></div>
     </form>
 
@@ -159,6 +161,7 @@
     <p>&copy; 2025 BlockTune. Tous droits réservés.</p>
   </footer>
 
+  <!-- JS inline minimal -->
   <script>
     function copy(id) {
       const text = document.getElementById(id).textContent;
