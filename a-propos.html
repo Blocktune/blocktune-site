@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Qui est Chicho – BlockTune">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Qui est Chicho – BlockTune"/>
   <title>À propos – BlockTune</title>
-  <link rel="icon" href="favicon.ico">
-  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="navbar">
-  <a href="index.html">
-    <img src="logo_blocktune.png" alt="BlockTune Logo">
-  </a>
-    <nav>
-      <ul>
+    <a href="index.html">
+      <img src="logo_blocktune.png" alt="BlockTune Logo" class="logo"/>
+    </a>
+    <nav class="nav-container">
+      <ul class="nav-links">
         <li><a href="index.html">Accueil</a></li>
         <li><a href="a-propos.html" class="active">À propos</a></li>
         <li><a href="tarifs.html">Tarifs</a></li>
@@ -22,33 +22,24 @@
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+      <div class="burger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="close-menu" onclick="toggleMenu()">×</div>
     </nav>
   </header>
 
-  <main class="about-page">
+  <main>
     <section class="profil">
-      <img src="Profil.jpg" alt="Chicho" class="photo-arrondie">
+      <img src="profil.jpg" alt="Chicho" class="about-image" />
       <div class="bio">
-        <p>
-          Je m’appelle Chicho.  
-          Mon studio, c’est ma chambre. Mon son, c’est mon monde.
-        </p>
-        <p>
-          Je mixe depuis plus de 10 ans avec les meilleurs outils professionnels du marché.  
-          Chaque son que je traite, je le pousse à son niveau maximal.
-        </p>
-        <p>
-          Je travaille dans l’ombre, sans détour, sans faux-semblants.  
-          Chaque piste que je touche, je la rends plus claire, plus forte, plus vivante.
-        </p>
-        <p>
-          Pas de strass, pas de filtre : juste le mix brut, pensé pour traverser les murs.  
-          BlockTune, c’est plus qu’un site. C’est la porte d’entrée vers un son sans compromis.
-        </p>
-        <p>
-          Si tu cherches la qualité, l’intensité, le respect du détail…  
-          t’es au bon endroit.
-        </p>
+        <p>Je m’appelle Chicho. Mon studio, c’est ma chambre. Mon son, c’est mon monde.</p>
+        <p>Je mixe depuis plus de 10 ans avec les meilleurs outils professionnels du marché. Chaque son que je traite, je le pousse à son niveau maximal.</p>
+        <p>Je travaille dans l’ombre, sans détour, sans faux-semblants. Chaque piste que je touche, je la rends plus claire, plus forte, plus vivante.</p>
+        <p>Pas de strass, pas de filtre : juste le mix brut, pensé pour traverser les murs. BlockTune, c’est plus qu’un site. C’est la porte d’entrée vers un son sans compromis.</p>
+        <p>Si tu cherches la qualité, l’intensité, le respect du détail… t’es au bon endroit.</p>
       </div>
     </section>
   </main>
@@ -56,5 +47,17 @@
   <footer>
     <p>&copy; 2025 BlockTune. Tous droits réservés.</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      const burger = document.querySelector('.burger');
+      const closeMenu = document.querySelector('.close-menu');
+      document.body.classList.toggle('menu-open');
+      navLinks.classList.toggle('active');
+      burger.classList.toggle('hide');
+      closeMenu.classList.toggle('show');
+    }
+  </script>
 </body>
 </html>
