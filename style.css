@@ -14,12 +14,12 @@ body.menu-open {
   overflow: hidden;
 }
 
-/* Header */
+/* Header - couleur unifiée sur PC et mobile */
 header.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: #1a1a1a; /* uniformisé */
   padding: 8px 20px;
   position: sticky;
   top: 0;
@@ -73,6 +73,7 @@ nav ul li a:focus {
   text-decoration: none;
 }
 
+/* Chevron déco (desktop : caché) */
 nav ul li a .chevron {
   display: none;
   margin-left: auto;
@@ -99,14 +100,14 @@ nav ul li a .chevron {
   transition: 0.3s;
 }
 
-/* Bouton croix pour fermer menu */
+/* Croix pour fermer menu */
 .close-menu {
   display: none;
   position: fixed;
   right: 20px;
   top: 20px;
   font-size: 32px;
-  color: white; /* Modifié */
+  color: white;
   z-index: 10001;
   cursor: pointer;
 }
@@ -119,7 +120,7 @@ nav ul li a .chevron {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #1a1a1a; /* Couleur sombre */
+    background-color: #1a1a1a;
     width: 100vw;
     height: 100vh;
     justify-content: flex-start;
@@ -147,7 +148,7 @@ nav ul li a .chevron {
     justify-content: space-between;
     align-items: center;
     background: transparent;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: none; /* Suppression des traits */
     border-radius: 0;
   }
 
@@ -160,7 +161,7 @@ nav ul li a .chevron {
   nav ul li a .chevron {
     display: inline-block;
     font-size: 20px;
-    color: white; /* Modifié */
+    color: white;
   }
 
   .burger {
@@ -177,7 +178,6 @@ nav ul li a .chevron {
 
   header.navbar {
     justify-content: flex-start;
-    background-color: #1a1a1a; /* même que menu */
   }
 
   .navbar .logo {
@@ -272,7 +272,6 @@ footer {
   display: none;
 }
 
-/* Utilitaire mobile uniquement */
 .mobile-only {
   display: none;
 }
@@ -282,7 +281,7 @@ footer {
   }
 }
 
-/* ❌ Suppression du sélecteur de langue */
+/* Sélecteur langue désactivé */
 .lang-switcher {
   display: none;
 }
