@@ -11,24 +11,22 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('header.navbar').appendChild(closeBtn);
 
   if (burger && navLinks) {
-    // Ouvrir le menu
     burger.addEventListener('click', () => {
       navLinks.classList.add('active');
       burger.classList.add('hide');
       closeBtn.classList.add('show');
-      document.body.classList.add('menu-open'); // Désactive scroll
+      document.body.classList.add('menu-open');
     });
 
-    // Fermer le menu avec la croix
     closeBtn.addEventListener('click', () => {
       navLinks.classList.remove('active');
       burger.classList.remove('hide');
       closeBtn.classList.remove('show');
-      document.body.classList.remove('menu-open'); // Réactive scroll
+      document.body.classList.remove('menu-open');
     });
   }
 
-  // Copier adresse wallet au clic
+  // Copier adresse wallet
   document.querySelectorAll('.copy-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const target = btn.getAttribute('data-copy');
@@ -40,9 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Visualiseur audio simple (waveform animé)
+  // Visualiseur audio
   const players = document.querySelectorAll('.audio-player');
-
   players.forEach(player => {
     const audio = player.querySelector('audio');
     const canvas = player.querySelector('canvas');
@@ -54,8 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const analyserNode = analyser.createAnalyser();
     source.connect(analyserNode);
     analyserNode.connect(analyser.destination);
-
     analyserNode.fftSize = 256;
+
     const bufferLength = analyserNode.frequencyBinCount;
     const dataArray = new Uint8Array(bufferLength);
 
@@ -80,4 +77,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     audio.addEventListener('play', () => draw());
   });
+
+  // Gère l'envoi du formulaire avec loader
+  const form = document.querySelector('form');
+  if (form) {
+    const loader = document.createElement('div');
+    loader.id = 'loader';
+    loader.innerHTML = `<div class="spinner"></div><p>Commande en cours...</p>`;
+    loader.style.display = 'none';
+    document.body.appendChild(loader);
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      loader.style.display = 'flex';
+      form.style.opacity = '0.4';
+      setTimeout(() => {
+        form.submit();
+        window.location.href = 'merci.html';
+      }, 2200);
+    });
+  }
 });
