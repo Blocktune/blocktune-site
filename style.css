@@ -20,60 +20,72 @@ header.navbar {
   position: sticky;
   top: 0;
   z-index: 1000;
+  flex-wrap: wrap;
 }
 
 .navbar .logo {
   height: 42px;
   width: auto;
-  margin-left: 10px;
 }
 
-nav ul {
+/* Desktop Menu */
+nav {
+  flex-grow: 1;
+}
+
+nav ul.nav-links {
   list-style: none;
   display: flex;
-  gap: 25px;
-  padding: 0;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
   margin: 0;
+  padding: 0;
 }
 
 nav ul li a {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
+  font-size: 15px;
 }
 
 nav ul li a:hover {
   text-decoration: underline;
 }
 
-/* Menu Burger - mobile */
+/* Burger Menu */
 .burger {
   display: none;
   flex-direction: column;
   cursor: pointer;
+  margin-left: auto;
+  margin-right: 10px;
 }
 
-.burger div {
-  width: 25px;
+.burger span {
   height: 3px;
-  background-color: white;
-  margin: 4px;
-  transition: all 0.3s ease;
+  width: 25px;
+  background-color: #fff;
+  margin: 4px 0;
+  transition: 0.3s;
 }
 
+/* Mobile Navigation */
 @media screen and (max-width: 768px) {
-  nav ul {
+  nav ul.nav-links {
     display: none;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.95);
     position: absolute;
     top: 60px;
     right: 20px;
+    background-color: rgba(0, 0, 0, 0.95);
     border-radius: 10px;
     padding: 15px;
+    width: 180px;
   }
 
-  nav ul.active {
+  nav ul.nav-links.active {
     display: flex;
   }
 
@@ -81,9 +93,15 @@ nav ul li a:hover {
     display: flex;
   }
 
-  .navbar {
-    flex-direction: row;
+  header.navbar {
+    justify-content: space-between;
   }
+}
+
+/* Langue */
+.lang-switcher {
+  text-align: right;
+  padding: 10px 20px;
 }
 
 /* Main Content */
@@ -96,10 +114,6 @@ main {
 }
 
 /* Audio Section */
-.audio-section {
-  margin-top: 30px;
-}
-
 .audio-player {
   margin-bottom: 25px;
 }
@@ -130,7 +144,7 @@ main {
   line-height: 1.6;
 }
 
-/* Command Form */
+/* Form */
 form {
   display: flex;
   flex-direction: column;
@@ -139,7 +153,9 @@ form {
   margin: 0 auto;
 }
 
-form input, form select, form textarea {
+form input,
+form select,
+form textarea {
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #444;
@@ -177,7 +193,7 @@ footer {
   margin-top: 10px;
 }
 
-/* Cacher animation logo supprimée */
+/* Loader masqué */
 #loader {
   display: none;
 }
