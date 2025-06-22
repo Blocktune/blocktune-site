@@ -1,31 +1,42 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Commande – BlockTune</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Commander un mix ou mastering pro en crypto">
-  <link rel="icon" href="favicon.ico">
-  <link rel="stylesheet" href="style.css">
+  <title>Commande – BlockTune</title>
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
 <body>
+
+  <!-- Barre de navigation -->
   <header class="navbar">
-  <a href="index.html">
-    <img src="logo_blocktune.png" alt="BlockTune Logo">
-  </a>
-    <nav>
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="a-propos.html">À propos</a></li>
-        <li><a href="tarifs.html">Tarifs</a></li>
-        <li><a href="commande.html" class="active">Commande</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="contact.html">Contact</a></li>
+    <a href="index.html">
+      <img src="logo_blocktune.png" alt="Logo BlockTune" class="logo">
+    </a>
+
+    <nav class="nav-container">
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html"><span class="nav-item-text">Accueil</span></a></li>
+        <li><a href="a-propos.html"><span class="nav-item-text">À propos</span></a></li>
+        <li><a href="tarifs.html"><span class="nav-item-text">Tarifs</span></a></li>
+        <li><a href="commande.html" class="active"><span class="nav-item-text">Commande</span></a></li>
+        <li><a href="blog.html"><span class="nav-item-text">Blog</span></a></li>
+        <li><a href="contact.html"><span class="nav-item-text">Contact</span></a></li>
       </ul>
     </nav>
+
+    <div class="burger" id="burger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="close-menu" id="close-menu">✕</div>
   </header>
 
+  <!-- Contenu principal -->
   <main class="commande">
     <h1>Passer commande</h1>
 
@@ -79,14 +90,14 @@
 
       <div class="wallet">
         <h3>Bitcoin (BTC)</h3>
-        <p id="btc">bc1qqvctuamud0wn649snnefjnzugs0nqc38ghkfrd</p>
+        <p><a href="#" id="btc" onclick="copy('btc')" class="wallet-link">bc1qqvctuamud0wn649snnefjnzugs0nqc38ghkfrd</a></p>
         <img src="qrcode_btc.png" alt="QR BTC" class="qrcode">
         <button onclick="copy('btc')">Copier l’adresse</button>
       </div>
 
       <div class="wallet">
         <h3>Ethereum / USDT (ERC20)</h3>
-        <p id="eth">0x0E4C47af698D83cfa287225D0A0Ba6dADA45f5fC</p>
+        <p><a href="#" id="eth" onclick="copy('eth')" class="wallet-link">0x0E4C47af698D83cfa287225D0A0Ba6dADA45f5fC</a></p>
         <img src="qrcode_eth.png" alt="QR ETH" class="qrcode">
         <button onclick="copy('eth')">Copier l’adresse</button>
       </div>
