@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Paiement sécurisé par crypto – BlockTune">
+  <title>Paiement – BlockTune</title>
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .step {
+      margin: 2rem 0;
+      text-align: left;
+    }
+    .step h2 {
+      color: #fff;
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+    .step p {
+      color: #ccc;
+      line-height: 1.6rem;
+    }
+    .wallet {
+      background-color: #111;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 30px auto;
+      max-width: 400px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+    }
+    .wallet h3 {
+      color: white;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    .wallet-link {
+      display: inline-block;
+      font-family: monospace;
+      color: #ccc;
+      text-decoration: none;
+      margin-bottom: 10px;
+      word-break: break-all;
+      cursor: pointer;
+    }
+    .wallet-link:hover {
+      color: #fff;
+    }
+    .qrcode {
+      width: 66%;
+      max-width: 200px;
+      margin: 15px auto;
+      display: block;
+    }
+    .wallet button {
+      display: block;
+      margin: 10px auto 0 auto;
+      padding: 8px 14px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .wallet button:hover {
+      background-color: #555;
+    }
+    .note {
+      color: #ffcc00;
+      font-weight: bold;
+      margin-top: 2rem;
+    }
+  </style>
+  <script>
+    function copy(id) {
+      const text = document.getElementById(id).textContent;
+      navigator.clipboard.writeText(text);
+      alert("Adresse copiée !");
+    }
+  </script>
+</head>
+<body>
+  <header class="navbar">
+    <a href="index.html">
+      <img src="logo_blocktune.png" alt="Logo BlockTune" class="logo">
+    </a>
+    <nav class="nav-container">
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html"><span class="nav-item-text">Accueil</span></a></li>
+        <li><a href="a-propos.html"><span class="nav-item-text">À propos</span></a></li>
+        <li><a href="tarifs.html"><span class="nav-item-text">Tarifs</span></a></li>
+        <li><a href="commande.html"><span class="nav-item-text">Commande</span></a></li>
+        <li><a href="blog.html"><span class="nav-item-text">Blog</span></a></li>
+        <li><a href="contact.html"><span class="nav-item-text">Contact</span></a></li>
+      </ul>
+    </nav>
+    <div class="burger" id="burger"><div></div><div></div><div></div></div>
+    <div class="close-menu" id="close-menu">✕</div>
+  </header>
+
+  <main class="container">
+    <h1>Paiement sécurisé</h1>
+    <p class="note">💸 Paiement 100% sécurisé via la blockchain</p>
+
+    <div class="step">
+      <h2>1. Envoyez le paiement</h2>
+      <p>Envoyez le montant indiqué sur la page précédente à l'une des adresses ci-dessous en fonction de la crypto choisie.</p>
+    </div>
+
+    <div class="wallet">
+      <h3>Bitcoin (BTC)</h3>
+      <a href="#" id="btc" class="wallet-link" onclick="copy('btc')">bc1qqvctuamud0wn649snnefjnzugs0nqc38ghkfrd</a>
+      <img src="qrcode_btc.png" alt="QR BTC" class="qrcode">
+      <button onclick="copy('btc')">Copier l’adresse</button>
+    </div>
+
+    <div class="wallet">
+      <h3>Ethereum / USDT (ERC20)</h3>
+      <a href="#" id="eth" class="wallet-link" onclick="copy('eth')">0x0E4C47af698D83cfa287225D0A0Ba6dADA45f5fC</a>
+      <img src="qrcode_eth.png" alt="QR ETH" class="qrcode">
+      <button onclick="copy('eth')">Copier l’adresse</button>
+    </div>
+
+    <div class="step">
+      <h2>2. Confirmez la commande</h2>
+      <p>Une fois le paiement envoyé, assurez-vous d’avoir bien rempli le <a href="commande.html">formulaire de commande</a>.</p>
+    </div>
+
+    <div class="step">
+      <h2>3. Réception & traitement</h2>
+      <p>Dès que le paiement est confirmé sur la blockchain, votre commande sera traitée sous 48h (ou 24h en express).</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 BlockTune. Tous droits réservés.</p>
+  </footer>
+</body>
+</html>
